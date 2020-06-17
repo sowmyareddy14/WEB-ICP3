@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+    <p style="text-align:center;"><img src="RPS.png" alt="Logo" width="250" height="250"></p>
+    <style>
+
+        div {
+            background-color: lightseagreen;
+            width: 300px;
+            border: 15px double black;
+            padding: 100px;
+            margin: 0 auto;
+        }-*
+
+    </style>
+</head>
+<body>
+
+<h1 style="text-align:center">Rock - Paper - Scissors</h1>
+<div class="rps">
+    <script>
+
+
+        var User = prompt("Choose rock or paper or scissors?"); // taking Choice of User as input
+
+
+        var Computer = Math.random(3); // Taking Choice of computer by using random function
+        if ( Computer ===0)
+        {
+            Computer = "rock";
+        }
+        else if( Computer ===1)
+        {
+            Computer = "paper";
+        }
+        else
+        {
+            Computer = "scissors";
+        }
+
+
+        document.write("<h4>Computer's Choice:" + " " + Computer + "</h4>");  // Displays Choice of Computer Randomly using Math.random() function
+        document.write("<h4>Your Choice:" + " " + User + "</h4>"); // Displays User Choice
+
+
+
+        var compare = function(choice1,choice2) // Defining the Compare function between choice of user and choice of computer
+        {
+            if (choice1 === choice2)
+            {
+                return "It's a tie!";
+            }
+            if ( (choice1 === "rock" && choice2 === "scissors") || (choice1 === "paper" && choice2 === "rock") || (choice1 === "scissors" && choice2 === "paper"))
+            {
+                return "You Win!" ;
+
+            }
+            else
+            {
+
+                return "You Lose!";
+            }
+        };
+
+
+        var results = compare(User,Computer);   // compare function is called to compare choices
+
+        document.write("<br><hr><br>" + results);  // result is displayed
+    </script>
+
+</div>
+
+</body>
+</html>
+</body>
+</html>
